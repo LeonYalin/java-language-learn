@@ -11,6 +11,10 @@ public class GoodStudent extends Student implements IStudent {
         super(firstName, lastName, grade, year);
     }
 
+    public String getParentHobby() {
+        return this.hobby;
+    }
+
     @Override
     public int getAvg() {
         return avg;

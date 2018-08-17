@@ -12,6 +12,7 @@ public class Student implements Comparable<Student>, Iterable<Student> {
     private String fullName;
     private int grade;
     private int year;
+    protected String hobby = "Swimming";
 
     // initialization block
     {
@@ -166,7 +167,7 @@ public class Student implements Comparable<Student>, Iterable<Student> {
         return this.firstName == student.firstName && this.lastName == student.lastName;
     }
 
-    private String getFullName() {
+    public String getFullName() {
         return this.fullName;
     }
 

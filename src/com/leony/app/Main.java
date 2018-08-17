@@ -99,5 +99,9 @@ public class Main {
         leonYalinSyllabus.setTuesdayCourses(new String[] {"Compilation", "Linear Math", "Algorithms"});
         leonYalinSyllabus.setFridayCourses(new String[] {"Logic Math", "Automates"});
         leonYalin.printSyllabus();
+
+        GoodStudent goodStudent4 = new GoodStudent("Nelly", "Yalin", 82, 3);
+        System.out.println("GoodStudent protected hobby is: " + goodStudent4.getParentHobby());
+        goodStudent4.printSyllabus(); // nothing yet
     }
 }
