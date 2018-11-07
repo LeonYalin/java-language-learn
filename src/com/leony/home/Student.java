@@ -22,13 +22,13 @@ public class Student implements Comparable<Student>, Iterable<Student> {
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.setFullName();
     }
 
     public Student(String firstName, String lastName, int year, int grade) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.setFullName();
+        this.year = year;
+        this.grade = grade;
     }
 
     public Student(Student anotherStudent) {
@@ -37,10 +37,12 @@ public class Student implements Comparable<Student>, Iterable<Student> {
 
     public void setFirstName(String name) {
         this.firstName = name;
+        setFullName();
     }
 
     public void setLastName(String name) {
         this.lastName = name;
+        setFullName();
     }
 
     public int getGrade() { return this.grade; }
@@ -135,8 +137,6 @@ public class Student implements Comparable<Student>, Iterable<Student> {
         firstStudent.lastName = secondStudent.lastName;
         secondStudent.firstName = tempFirstName;
         secondStudent.lastName = tempLastName;
-        firstStudent.setFullName();
-        secondStudent.setFullName();
     }
 
     public static void swapNames(Student... students) {
@@ -164,7 +164,7 @@ public class Student implements Comparable<Student>, Iterable<Student> {
         if (!(obj instanceof Student)) return false;
 
         Student student = (Student) obj;
-        return this.firstName == student.firstName && this.lastName == student.lastName;
+        return this.firstName.equals(student.firstName) && this.lastName.equals(student.lastName);
     }
 
     public String getFullName() {
